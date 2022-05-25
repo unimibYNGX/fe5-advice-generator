@@ -19,25 +19,64 @@
   
   <main>
     <div class="advice">
-      <div class="head-advice">ADVICE #</div>
-      <div class="txt-advice">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quisquam quibusdam aut veritatis ut sint architecto eum temporibus tenetur non dicta repellendus fuga nulla expedita illum quasi, itaque voluptatum possimus?"</div>
-      <img src="images/pattern-divider-mobile.svg" alt="">
+      <div class="head-advice" id="head-advice">ADVICE #</div>
+      <div class="txt-advice" id="txt-advice"></div>
+      <img src="images/pattern-divider-mobile.svg" alt="" class="divider">
+      <div class="dice" id="dice">
+        <img src="images/icon-dice.svg" class="svg-dice" alt="">
+      </div>
     </div>
     
-    <div class="dice">
-      <img src="images/icon-dice.svg" class="svg-dice" alt="">
-    </div>
     
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
       Coded by <a href="#">Your Name Here</a>.
     </div>
+
+    <div class="myData" id="myData"></div>
   </main>
-  
-  <script>    
-    fetch()
-    const dbParam = JSON.stringify('https://api.adviceslip.com/advice');
-    console.log(dbParam);
+  <script type="text/javascript">
+    function isJsonString(str) {
+      try {
+          JSON.parse(str);
+      } catch (e) {
+          return false;
+      }
+      return true;
+     }
+
+    var url = "https://api.adviceslip.com/advice";
+    function httpGet(theurl)
+    {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theurl, false ); // false for synchronous request
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+    }
+
+    function set_advice(){
+      var content = httpGet(url);
+      var head_advice = document.getElementById("head-advice");
+      var txt_advice = document.getElementById("txt-advice");
+
+      var parsed = JSON.parse(content);
+      /*reset*/
+      head_advice.innerHTML = "ADVICE #";
+      txt_advice.innerHTML = "";
+
+      var adviceNumber = document.createTextNode(parsed.slip.id);
+      head_advice.appendChild(adviceNumber);
+
+      var adviceTxt = document.createTextNode("\"" + parsed.slip.advice + "\"");
+      txt_advice.appendChild(adviceTxt);
+
+      console.log(parsed.slip.advice); /* eureka!!!! */
+    }
+    set_advice();
+
+    var dice = document.getElementById("dice");
+    dice.addEventListener("click", set_advice);
   </script>
+  
 </body>  
 </html>  

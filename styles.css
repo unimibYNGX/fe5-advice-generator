@@ -39,14 +39,16 @@ body {
   color: var(--neon_green);
   font-weight: 500;
   letter-spacing: 4px;
-  font-size: 12px;
+  font-size: 9px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .txt-advice {
   color: var(--light_cyan);
   font-weight: 600;
   margin-bottom: 20px;
+  padding: 5px;
 }
 
 .dice {
@@ -54,6 +56,7 @@ body {
   background-color: var(--neon_green);
   border-radius: 50px;
   height: 24px;
+  cursor: pointer;
 }
 
 main {
@@ -62,6 +65,7 @@ main {
   height: 100%;
   align-items: center;
   justify-content: center;
+  
 }
 
 .advice {
@@ -71,9 +75,16 @@ main {
   text-align: center;
   justify-content: center;
   display: flex;
-  padding: 30px;
+  padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: 10px;
   background-color: var(--dark_grayish_blue);
   border-radius: 5px;
+}
+
+.divider {
+  margin-bottom: 20px;
 }
 
 .attribution {
