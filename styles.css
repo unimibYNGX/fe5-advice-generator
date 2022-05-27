@@ -49,6 +49,7 @@ body {
   font-weight: 600;
   margin-bottom: 20px;
   padding: 5px;
+  width: 80%;
 }
 
 .dice {
@@ -57,6 +58,8 @@ body {
   border-radius: 50px;
   height: 24px;
   cursor: pointer;
+  margin-left: 39.5%;
+  margin-right: 39.5%;
 }
 
 main {
@@ -81,10 +84,13 @@ main {
   margin: 10px;
   background-color: var(--dark_grayish_blue);
   border-radius: 5px;
+  width: 400px;
+  box-shadow: 0px 0px 20px #1f2632;
 }
 
 .divider {
   margin-bottom: 20px;
+  width: fixed;
 }
 
 .attribution {
