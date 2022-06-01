@@ -18,13 +18,13 @@
 <body>  
   
   <main>
-    <div class="advice">
+    <div class="advice" >
       <div class="head-advice" id="head-advice">ADVICE #</div>
       <div class="txt-advice" id="txt-advice"></div>
       <img src="images/pattern-divider-mobile.svg" alt="" class="divider">
-      <div class="dice" id="dice">
+      <button id="svg-dice">
         <img src="images/icon-dice.svg" class="svg-dice" alt="">
-      </div>
+      </button>
     </div>
     
     
@@ -34,6 +34,9 @@
     </div>
 
   </main>
+
+  <script type="text/javascript" src="vanilla-tilt.js"></script>
+
   <script type="text/javascript">
     function isJsonString(str) {
       try {
@@ -73,7 +76,7 @@
     }
     set_advice();
 
-    var dice = document.getElementById("dice");
+    var dice = document.getElementById("svg-dice");
     dice.addEventListener("click", set_advice);
   </script>
   

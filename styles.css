@@ -52,23 +52,12 @@ body {
   width: 80%;
 }
 
-.dice {
-  padding: 18px;
-  background-color: var(--neon_green);
-  border-radius: 50px;
-  height: 24px;
-  cursor: pointer;
-  margin-left: 39.5%;
-  margin-right: 39.5%;
-}
-
 main {
   display: flex;
   flex-wrap: wrap;
   height: 100%;
   align-items: center;
   justify-content: center;
-  
 }
 
 .advice {
@@ -80,12 +69,15 @@ main {
   display: flex;
   padding: 10px;
   padding-top: 30px;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
+  padding-bottom: 3rem;
   margin: 10px;
   background-color: var(--dark_grayish_blue);
   border-radius: 5px;
   width: 400px;
   box-shadow: 0px 0px 20px #1f2632;
+
+  position: relative;
 }
 
 .divider {
@@ -95,6 +87,41 @@ main {
 
 .attribution {
   display: none;
+}
+
+/* .dice {
+  padding: 16px;
+  background-color: var(--neon_green);
+  border-radius: 50px;
+  height: 24px;
+  cursor: pointer;
+  margin-left: 39.5%;
+  margin-right: 39.5%;
+  transition: 0.2s ease;
+}
+
+.dice:hover {
+  padding: 18px;
+} */
+
+
+body button {
+  position: absolute;
+  background-color: var(--neon_green);
+  border-radius: 100%;
+  padding: 1.25rem;
+  height: 75px;
+  width: 75px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  bottom: 0;
+  transform: translateY(2.4rem);
+}
+
+body button:hover {
+  transform: translateY(2.5rem);
+  height: 80px;
+  width: 80px;
 }
 
 /*# sourceMappingURL=styles.css.map */
